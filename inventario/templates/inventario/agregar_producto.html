@@ -1,0 +1,13 @@
+{% extends "inventario/base.html" %}
+
+{% block title %}Agregar Producto{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Agregar Producto</h1>
+<form method="post" class="needs-validation" novalidate>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a href="{% url 'lista_productos' %}" class="btn btn-secondary">Cancelar</a>
+</form>
+{% endblock %}
